@@ -1,5 +1,7 @@
 import AlunosController from '#controllers/alunos_controller'
 import AulasController from '#controllers/aulas_controller'
+import EscolasController from '#controllers/escolas_controller'
+import OrganizacaoController from '#controllers/organizacao_controller'
 import router from '@adonisjs/core/services/router'
 
 router.get('/', async () => {
@@ -19,3 +21,17 @@ router.post('aulas', [AulasController, 'store'])
 router.get('aulas/:id', [AulasController, 'show'])
 router.put('aulas/:id', [AulasController, 'update'])
 router.delete('aulas/:id', [AulasController, 'destroy'])
+
+
+router.get('escolas', [EscolasController, 'index'])
+router.post('escolas', [EscolasController, 'store'])
+router.get('escolas/:id', [EscolasController, 'show'])
+router.put('escolas/:id', [EscolasController, 'update'])
+router.delete('escolas/:id', [EscolasController, 'destroy'])
+
+
+router.get('organizacao', [OrganizacaoController, 'index'])
+router.post('organizacao', [OrganizacaoController, 'store'])
+router.get('organizacao/:id', [OrganizacaoController, 'show'])
+router.put('organizacao/:id', [OrganizacaoController, 'update'])
+router.delete('organizacao/:id', [OrganizacaoController, 'destroy'])

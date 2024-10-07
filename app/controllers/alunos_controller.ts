@@ -1,5 +1,6 @@
 import Aluno from '#models/aluno'
 import type { HttpContext } from '@adonisjs/core/http'
+import mail from '@adonisjs/mail/services/main'
 
 export default class AlunosController {
 
@@ -27,6 +28,21 @@ export default class AlunosController {
 
     try {
       const alunoAdd = await Aluno.create(data)
+
+      // Envio de email após a criação do aluno
+      try {
+        await mail.send((message) => {
+          message
+            .from('ti@seudominio.com.br')
+            .to(alunoAdd.email) // Enviar para o email do aluno
+            .subject('Cadastro realizado com sucesso!')
+            .html(`<p>Olá, ${alunoAdd.nome}! Seu cadastro foi realizado com sucesso.</p>`)
+            
+        })
+        console.log('Email enviado com sucesso!')
+      } catch (error) {
+        console.error('Erro ao enviar email:', error)
+      }
 
       return response.safeStatus(201).json({
         message: `Aluno ${alunoAdd.nome}, criado com sucesso!`,
@@ -74,6 +90,20 @@ export default class AlunosController {
       alunoup.merge(data)
 
       const alunoModified = await alunoup.save()
+
+      // Envio de email após a alteração do aluno
+      try {
+        await mail.send((message) => {
+          message
+            .from('ti@seudominio.com.br')
+            .to(alunoModified.email) // Enviar para o email do aluno
+            .subject('Alteração no cadastro realizada com sucesso!')
+            .html(`<p>Olá, ${alunoModified.nome}! Seu cadastro foi alterado com sucesso.</p>`)
+        })
+        console.log('Email enviado com sucesso!')
+      } catch (error) {
+        console.error('Erro ao enviar email:', error)
+      }
 
       return response.safeStatus(201).json({
         message: `Aluno ${alunoModified.nome}, alterado com sucesso!`,

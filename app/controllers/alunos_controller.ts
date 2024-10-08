@@ -29,15 +29,27 @@ export default class AlunosController {
     try {
       const alunoAdd = await Aluno.create(data)
 
-      // Envio de email após a criação do aluno
+      // Envio de email após a criação do aluno com design estilizado
       try {
         await mail.send((message) => {
           message
             .from('ti@seudominio.com.br')
-            .to(alunoAdd.email) // Enviar para o email do aluno
-            .subject('Cadastro realizado com sucesso!')
-            .html(`<p>Olá, ${alunoAdd.nome}! Seu cadastro foi realizado com sucesso.</p>`)
-            
+            .to(alunoAdd.email)
+            .subject('🎉 Cadastro realizado com sucesso! 🎉')
+            .html(`
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
+                <h2 style="text-align: center; color: #007BFF;">🎓 Cadastro Realizado com Sucesso! 🎓</h2>
+                <p style="font-size: 16px; color: #555;">Olá, <strong>${alunoAdd.nome}</strong>!</p>
+                <p style="font-size: 16px; color: #555;">
+                  Seu cadastro foi concluído com sucesso. Agora você pode acessar todos os nossos serviços e aproveitar ao máximo a nossa plataforma.
+                </p>
+                <hr style="border: none; border-top: 3px solid #007BFF;">
+                <p style="text-align: center; font-size: 14px; color: #999;">
+                  Obrigado por se registrar! Se você tiver alguma dúvida, entre em contato com o suporte.
+                </p>
+                <p style="text-align: center; font-size: 14px; color: #FF5722;">📞 Suporte: suporte@seudominio.com.br | (xx) xxxx-xxxx</p>
+              </div>
+            `)
         })
         console.log('Email enviado com sucesso!')
       } catch (error) {
@@ -91,14 +103,27 @@ export default class AlunosController {
 
       const alunoModified = await alunoup.save()
 
-      // Envio de email após a alteração do aluno
+      // Envio de email após a alteração do aluno com design estilizado
       try {
         await mail.send((message) => {
           message
             .from('ti@seudominio.com.br')
-            .to(alunoModified.email) // Enviar para o email do aluno
-            .subject('Alteração no cadastro realizada com sucesso!')
-            .html(`<p>Olá, ${alunoModified.nome}! Seu cadastro foi alterado com sucesso.</p>`)
+            .to(alunoModified.email)
+            .subject('🎉 Alteração no cadastro realizada com sucesso! 🎉')
+            .html(`
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
+                <h2 style="text-align: center; color: #007BFF;">✏️ Alteração de Cadastro</h2>
+                <p style="font-size: 16px; color: #555;">Olá, <strong>${alunoModified.nome}</strong>!</p>
+                <p style="font-size: 16px; color: #555;">
+                  Seu cadastro foi atualizado com sucesso. Por favor, confira os detalhes no sistema para garantir que tudo está correto.
+                </p>
+                <hr style="border: none; border-top: 3px solid #007BFF;">
+                <p style="text-align: center; font-size: 14px; color: #999;">
+                  Se você não solicitou essa alteração, entre em contato com o suporte imediatamente.
+                </p>
+                <p style="text-align: center; font-size: 14px; color: #FF5722;">📞 Suporte: ti02.awf@gmail.com | (43) 99130-8099</p>
+              </div>
+            `)
         })
         console.log('Email enviado com sucesso!')
       } catch (error) {

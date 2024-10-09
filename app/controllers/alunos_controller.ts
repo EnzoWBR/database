@@ -33,7 +33,7 @@ export default class AlunosController {
       try {
         await mail.send((message) => {
           message
-            .from('ti@seudominio.com.br')
+            .from('ti2@wdobrasil.com.br')
             .to(alunoAdd.email)
             .subject('🎉 Cadastro realizado com sucesso! 🎉')
             .html(`
@@ -47,7 +47,7 @@ export default class AlunosController {
                 <p style="text-align: center; font-size: 14px; color: #999;">
                   Obrigado por se registrar! Se você tiver alguma dúvida, entre em contato com o suporte.
                 </p>
-                <p style="text-align: center; font-size: 14px; color: #FF5722;">📞 Suporte: suporte@seudominio.com.br | (xx) xxxx-xxxx</p>
+                <p style="text-align: center; font-size: 14px; color: #FF5722;">📞 Suporte: ti02.awf@gmail.com | (43) 99130-8099</p>
               </div>
             `)
         })
@@ -107,7 +107,7 @@ export default class AlunosController {
       try {
         await mail.send((message) => {
           message
-            .from('ti@seudominio.com.br')
+            .from('ti2@wdobrasil.com.br')
             .to(alunoModified.email)
             .subject('🎉 Alteração no cadastro realizada com sucesso! 🎉')
             .html(`

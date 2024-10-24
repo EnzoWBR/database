@@ -24,7 +24,7 @@ router.put('alunos/:id', [AlunosController, 'update']);
 router.delete('alunos/:id', [AlunosController, 'destroy']);
 
 // Rotas de Aulas
-router.get('aulas', [AulasController, 'index']).use(authMiddleware.handle.bind(authMiddleware));
+router.get('aulas', [AulasController, 'index'])
 router.post('aulas', [AulasController, 'store']).use(authMiddleware.handle.bind(authMiddleware));
 router.get('aulas/:id', [AulasController, 'show']) .use(authMiddleware.handle.bind(authMiddleware));
 router.put('aulas/:id', [AulasController, 'update'])

@@ -95,6 +95,7 @@ export default class AlunosController {
         'endereco',
         'telefone',
         'email',
+        'escolaId',
         'createdAt',
         'updatedAt',
       ])

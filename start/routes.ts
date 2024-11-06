@@ -17,7 +17,7 @@ router.get('/', async () => {
 });
 
 // Rotas de Alunos
-router.get('alunos', [AlunosController, 'index']).use(authMiddleware.handle.bind(authMiddleware));
+router.get('alunos', [AlunosController, 'index'])
 router.post('alunos', [AlunosController, 'store']).use(authMiddleware.handle.bind(authMiddleware));
 router.get('alunos/:id', [AlunosController, 'show']).use(authMiddleware.handle.bind(authMiddleware));
 router.put('alunos/:id', [AlunosController, 'update']);

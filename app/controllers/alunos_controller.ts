@@ -37,19 +37,27 @@ export default class AlunosController {
             .to(alunoAdd.email)
             .subject('🎉 Cadastro realizado com sucesso! 🎉')
             .html(`
-              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
-                <h2 style="text-align: center; color: #007BFF;">🎓 Cadastro Realizado com Sucesso! 🎓</h2>
-                <p style="font-size: 16px; color: #555;">Olá, <strong>${alunoAdd.nome}</strong>!</p>
-                <p style="font-size: 16px; color: #555;">
-                  Seu cadastro foi concluído com sucesso. Agora você pode acessar todos os nossos serviços e aproveitar ao máximo a nossa plataforma.
-                </p>
-                <hr style="border: none; border-top: 3px solid #007BFF;">
-                <p style="text-align: center; font-size: 14px; color: #999;">
-                  Obrigado por se registrar! Se você tiver alguma dúvida, entre em contato com o suporte.
-                </p>
-                <p style="text-align: center; font-size: 14px; color: #FF5722;">📞 Suporte: ti02.awf@gmail.com | (43) 99130-8099</p>
-              </div>
-            `)
+             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border-radius: 10px; background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <div style="background-color: #007BFF; border-radius: 10px 10px 0 0; padding: 20px; text-align: center;">
+              <h2 style="margin: 0; color: white; font-size: 24px; font-weight: bold;">🎓 Cadastro Realizado com Sucesso! 🎓</h2>
+            </div>
+            <div style="padding: 20px; color: #555;">
+              <p style="font-size: 16px;">Olá, <strong style="color: #007BFF;">${alunoAdd.nome}</strong>!</p>
+              <p style="font-size: 16px;">
+                Seu cadastro foi concluído com sucesso! Agora você pode acessar todos os nossos serviços e aproveitar ao máximo a nossa plataforma.
+              </p>
+              <hr style="border: none; border-top: 2px solid #007BFF; margin: 20px 0;">
+              <p style="font-size: 14px; text-align: center; color: #999;">
+                Obrigado por se registrar! Se você tiver alguma dúvida, entre em contato com o suporte.
+              </p>
+              <p style="font-size: 14px; text-align: center; color: #FF5722; font-weight: bold;">📞 Suporte: ti02.awf@gmail.com | (43) 99130-8099</p>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="mailto:ti02.awf@gmail.com" style="background-color: #007BFF; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 16px; font-weight: bold; transition: background-color 0.3s;">
+                Contatar Suporte
+              </a>
+            </div>
+          </div>`)
         })
         console.log('Email enviado com sucesso!')
       } catch (error) {
@@ -112,18 +120,27 @@ export default class AlunosController {
             .to(alunoModified.email)
             .subject('🎉 Alteração no cadastro realizada com sucesso! 🎉')
             .html(`
-              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
-                <h2 style="text-align: center; color: #007BFF;">✏️ Alteração de Cadastro</h2>
-                <p style="font-size: 16px; color: #555;">Olá, <strong>${alunoModified.nome}</strong>!</p>
-                <p style="font-size: 16px; color: #555;">
-                  Seu cadastro foi atualizado com sucesso. Por favor, confira os detalhes no sistema para garantir que tudo está correto.
-                </p>
-                <hr style="border: none; border-top: 3px solid #007BFF;">
-                <p style="text-align: center; font-size: 14px; color: #999;">
-                  Se você não solicitou essa alteração, entre em contato com o suporte imediatamente.
-                </p>
-                <p style="text-align: center; font-size: 14px; color: #FF5722;">📞 Suporte: ti02.awf@gmail.com | (43) 99130-8099</p>
-              </div>
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border-radius: 10px; background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <div style="background-color: #007BFF; border-radius: 10px 10px 0 0; padding: 20px; text-align: center;">
+              <h2 style="margin: 0; color: white; font-size: 24px; font-weight: bold;">✏️ Alteração de Cadastro</h2>
+            </div>
+            <div style="padding: 20px; color: #555;">
+              <p style="font-size: 16px;">Olá, <strong style="color: #007BFF;">${alunoModified.nome}</strong>!</p>
+              <p style="font-size: 16px;">
+                Seu cadastro foi atualizado com sucesso. Por favor, confira os detalhes no sistema para garantir que tudo está correto.
+              </p>
+              <hr style="border: none; border-top: 2px solid #007BFF; margin: 20px 0;">
+              <p style="font-size: 14px; text-align: center; color: #999;">
+                Se você não solicitou essa alteração, entre em contato com o suporte imediatamente.
+              </p>
+              <p style="font-size: 14px; text-align: center; color: #FF5722; font-weight: bold;">📞 Suporte: ti02.awf@gmail.com | (43) 99130-8099</p>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="mailto:ti02.awf@gmail.com" style="background-color: #007BFF; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 16px; font-weight: bold; transition: background-color 0.3s;">
+                Contatar Suporte
+              </a>
+            </div>
+          </div>
             `)
         })
         console.log('Email enviado com sucesso!')
